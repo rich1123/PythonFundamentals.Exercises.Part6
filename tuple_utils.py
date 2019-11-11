@@ -1,4 +1,4 @@
-from typing import Iterable, Tuple, List
+from typing import Iterable, Tuple, List, Union
 TicTacToeRow = List[str]
 TicTacToeBoard = Tuple[TicTacToeRow, TicTacToeRow, TicTacToeRow]
 
@@ -17,7 +17,7 @@ def tic_tac_toe_finish(board: TicTacToeBoard, pos_y: int, pos_x: int, symbol: st
     pass  # remove pass statement and implement me
 
 
-def count_instances(collection: Tuple, instance) -> int:
+def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     """
     This function counts the number if occurrences of the instance value within the collection parameter.
 
