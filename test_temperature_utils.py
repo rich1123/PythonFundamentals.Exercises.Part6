@@ -2,7 +2,7 @@ import unittest
 import temperature_utils
 
 
-class TemperatureUtils(unittest.TestCase):
+class TemperatureUtilsTest(unittest.TestCase):
 
     def test_convert_to_celsius(self):
         self.assertEqual(0, temperature_utils.convert_to_celsius(32))
