@@ -35,10 +35,13 @@ class TupleUtilsTest(unittest.TestCase):
         self.assertEqual(board_in, board_out)
 
     def test_count_instances(self):
-        nums = (1, 1, 1, 0)
-        self.assertEqual(3, tuple_utils.count_instances(nums, 1))
-        chars = ('A', 'B', 'B', 'C')
-        self.assertEqual(2, tuple_utils.count_instances(chars, 'B'))
+        test_cases = [
+            ((1, 1, 1, 0), 1, 3),
+            (('A', 'B', 'B', 'C'), 'B', 2)
+        ]
+        for tuple_to_evaluate, item_to_count, expected in test_cases:
+            with self.subTest(f"{tuple_to_evaluate}, {item_to_count} -> {expected}"):
+                self.assertEqual(expected, tuple_utils.count_instances(tuple_to_evaluate, item_to_count))
 
     @unittest.mock.patch('sys.stdout', new_callable=StringIO)
     def test_print_indexes_and_entries(self, mock_stdout):
