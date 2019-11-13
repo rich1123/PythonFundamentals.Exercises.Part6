@@ -5,15 +5,25 @@ import temperature_utils
 class TemperatureUtilsTest(unittest.TestCase):
 
     def test_convert_to_celsius(self):
-        self.assertEqual(0, temperature_utils.convert_to_celsius(32))
-        self.assertEqual(20, temperature_utils.convert_to_celsius(68))
-        self.assertEqual(37.78, temperature_utils.convert_to_celsius(100))
-        self.assertEqual(40, temperature_utils.convert_to_celsius(104))
+        test_cases = [
+            (32, 0),
+            (68, 20),
+            (100, 37.78),
+            (104, 40)
+        ]
+        for temp_in, expected in test_cases:
+            with self.subTest(f"{temp_in} -> {expected}"):
+                self.assertEqual(expected, temperature_utils.convert_to_celsius(temp_in))
 
     def test_convert_to_fahrenheit(self):
-        self.assertEqual(0, temperature_utils.convert_to_fahrenheit(-17.7778))
-        self.assertEqual(32, temperature_utils.convert_to_fahrenheit(0))
-        self.assertEqual(212, temperature_utils.convert_to_fahrenheit(100))
+        test_cases = [
+            (-17.7778, 0),
+            (0, 32),
+            (100, 212)
+        ]
+        for temp_in, expected in test_cases:
+            with self.subTest(f"{temp_in} -> {expected}"):
+                self.assertEqual(expected, temperature_utils.convert_to_fahrenheit(temp_in))
 
     def test_temperature_tuple(self):
         temps_input = (32, 68, 100, 104)
