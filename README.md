@@ -3,6 +3,7 @@
 ## Accompanying resources
 * Slide deck: https://zipcoder.github.io/reveal-slides.data-engineering/zcw_content/python/fundamentals-part6.html
 * Docs: https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals
+* Metric Conversion charts: https://www.metric-conversions.org/
 
 ## Exercise 1
 
